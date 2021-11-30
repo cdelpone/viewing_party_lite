@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   get '/users/:id/discover', to: 'discover#show'
   get '/users/:id/movies', to: 'movies#index'
+  get '/users/:id/movies/:id', to: 'movies#show'
 end

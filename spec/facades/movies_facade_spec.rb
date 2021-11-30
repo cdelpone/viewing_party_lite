@@ -7,7 +7,9 @@ RSpec.describe 'Movies Facade', :vcr do
     expect(response.count).to eq(40)
   end
 
-  xit 'gets top rated movies' do
+  it 'returns searched movies' do
+    response = MoviesFacade.movies_by_title("Shawshank")
 
+    require "pry"; binding.pry
   end
 end

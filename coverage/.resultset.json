@@ -7,33 +7,22 @@
           null
         ]
       },
-      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/dididodson/turing/mod3/viewing_party_lite/app/facades/movies_facade.rb": {
         "lines": [
           1,
           1,
           1,
-          2,
-          2,
+          1,
+          1,
           null,
-          2,
+          1,
+          null,
+          null,
+          1,
+          1,
+          0,
+          0,
+          0,
           null,
           null,
           null
@@ -44,33 +33,17 @@
           1,
           1,
           1,
-          4,
-          4,
+          3,
+          3,
           null,
           null,
           null,
           1,
-          4,
+          3,
           null,
-          4,
+          2,
           null,
           null,
-          null
-        ]
-      },
-      "/Users/dididodson/turing/mod3/viewing_party_lite/app/controllers/movies_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/dididodson/turing/mod3/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
           null
         ]
       },
@@ -114,7 +87,37 @@
         "branches": {
         }
       },
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/dididodson/turing/mod3/viewing_party_lite/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           0,
           0
@@ -124,6 +127,23 @@
       },
       "/Users/dididodson/turing/mod3/viewing_party_lite/app/controllers/discover_controller.rb": {
         "lines": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/controllers/movies_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
           0,
           0,
           0,
@@ -197,6 +217,6 @@
         }
       }
     },
-    "timestamp": 1638313747
+    "timestamp": 1638316120
   }
 }

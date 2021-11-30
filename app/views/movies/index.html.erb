@@ -3,7 +3,7 @@
 <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
 
 <div id="topmovies">
-  <% @top_40_movies.each do |movie| %>
+  <% @movies.each do |movie| %>
       <%= movie[:original_title] %> Vote Average: <%= movie[:vote_average] %><br>
   <% end %>
 </div>
