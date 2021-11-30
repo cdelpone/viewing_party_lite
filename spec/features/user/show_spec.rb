@@ -16,6 +16,6 @@ RSpec.describe "user show" do
 
     click_button "Discover Movies"
 
-    expect(current_page).to eq("/user/#{@user.id}/discover")
+    expect(current_path).to eq("/user/#{@user.id}/discover")
   end
 end
