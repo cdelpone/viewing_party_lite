@@ -12,13 +12,13 @@ RSpec.describe 'Movie API', :vcr do
     expect(response).to have_key(:total_results)
   end
 
-  it 'data from API' do
+  it 'gets top rated movies' do
     response = MovieService.get_data('movie/top_rated')
 
     response[:results].each do |movie|
       expect(movie).to have_key(:id)
       expect(movie).to have_key(:vote_average)
       expect(movie).to have_key(:original_title)
-    end  
+    end
   end
 end

@@ -25,8 +25,42 @@
           null
         ]
       },
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/facades/movies_facade.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          2,
+          2,
+          null,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/services/movies_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          4,
+          4,
+          null,
+          null,
+          null,
+          1,
+          4,
+          null,
+          4,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/dididodson/turing/mod3/viewing_party_lite/app/controllers/movies_controller.rb": {
         "lines": [
+          1,
           1,
           1,
           1,
@@ -37,15 +71,6 @@
       "/Users/dididodson/turing/mod3/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           1,
-          null
-        ]
-      },
-      "/Users/dididodson/turing/mod3/viewing_party_lite/app/controllers/discover_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
           null
         ]
       },
@@ -97,6 +122,17 @@
         "branches": {
         }
       },
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/controllers/discover_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/dididodson/turing/mod3/viewing_party_lite/app/controllers/main_controller.rb": {
         "lines": [
           0,
@@ -140,26 +176,6 @@
         "branches": {
         }
       },
-      "/Users/dididodson/turing/mod3/viewing_party_lite/app/services/movie_service.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/dididodson/turing/mod3/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -181,6 +197,6 @@
         }
       }
     },
-    "timestamp": 1638309148
+    "timestamp": 1638313747
   }
 }

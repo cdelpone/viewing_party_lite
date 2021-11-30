@@ -15,4 +15,15 @@ RSpec.describe 'Top rated movies page' do
 
     expect(current_path).to eq("/users/#{@user.id}/discover")
   end
+
+  it 'shows top 40 movies', :vcr do
+    movie = MoviesFacade.top_40.first
+
+    visit "/users/#{@user.id}/movies"
+
+    within("#topmovies") do
+      expect(page).to have_content(movie[:original_title])
+      expect(page).to have_content(movie[:vote_average])
+    end
+  end
 end
