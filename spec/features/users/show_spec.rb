@@ -4,7 +4,7 @@ RSpec.describe "user show" do
   before :each do
     @user = User.create!(name: 'Tammy Tanaka', email: 'tammy@fake_email.com')
 
-    visit "/user/#{@user.id}"
+    visit "/users/#{@user.id}"
   end
 
   it 'shows user details' do
@@ -16,6 +16,6 @@ RSpec.describe "user show" do
 
     click_button "Discover Movies"
 
-    expect(current_path).to eq("/user/#{@user.id}/discover")
+    expect(current_path).to eq("/users/#{@user.id}/discover")
   end
 end
