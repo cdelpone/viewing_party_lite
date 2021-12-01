@@ -18,4 +18,13 @@ RSpec.describe "user show" do
 
     expect(current_path).to eq(discover_show_path(@user))
   end
+
+  it 'has a button to discover movies', :vcr do
+    expect(page).to have_button("Discover Movies")
+
+    click_button "Discover Movies"
+
+    expect(current_path).to eq(discover_show_path(@user))
+  end
+
 end

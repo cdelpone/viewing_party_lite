@@ -16,6 +16,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
+    
+    # @movie_images = MoviesFacade.movie_image(params[:id])
   end
 
   private

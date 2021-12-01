@@ -26,5 +26,10 @@ class MoviesFacade
     def movie_reviews(id)
       movie = MoviesService.get_data("movie/#{id}/reviews")
     end
+
+    # def movie_image(id)
+    #   @movie_images = MoviesService.get_data("movie/#{id}/images")
+    #
+    # end
   end
 end

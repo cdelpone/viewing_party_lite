@@ -20,12 +20,12 @@ RSpec.describe 'Movie show page' do
     expect(current_path).to eq(discover_show_path(@user))
   end
 
-  xit 'has button to create viewing party', :vcr do
+  it 'has button to create viewing party', :vcr do
     expect(page).to have_button("Create Viewing Party for #{@movie[:original_title]}")
 
     click_button "Create Viewing Party for #{@movie[:original_title]}"
 
-    expect(current_path).to eq(new_viewing_party(@user, @movie))
+    expect(current_path).to eq(new_viewing_party_path(@user, @movie[:id]))
   end
 
   it 'has movie details from API', :vcr do
