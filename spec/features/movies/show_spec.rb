@@ -8,15 +8,24 @@ RSpec.describe 'Movie show page' do
     @movie_reviews = MoviesFacade.movie_reviews(278)
     @hours = @movie[:runtime]/60
     @minutes = (@movie[:runtime].to_f%60).to_i
-    visit "/users/#{@user.id}/movies/#{@movie[:id]}"
+
+    visit movie_show_path(@user, @movie)
   end
 
-  xit 'has button to return to discover page' do
+  it 'has button to return to discover page', :vcr do
     expect(page).to have_button("Discover Page")
 
     click_button "Discover Page"
 
-    expect(current_path).to eq("/users/#{@user.id}/discover")
+    expect(current_path).to eq(discover_show_path(@user))
+  end
+
+  xit 'has button to create viewing party', :vcr do
+    expect(page).to have_button("Create Viewing Party for #{@movie[:original_title]}")
+
+    click_button "Create Viewing Party for #{@movie[:original_title]}"
+
+    expect(current_path).to eq(new_viewing_party(@user, @movie))
   end
 
   it 'has movie details from API', :vcr do

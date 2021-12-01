@@ -1,9 +1,9 @@
 <h1>Top Rated Movies</h1>
 
-<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+<%= button_to "Discover Page", discover_show_path(@user), method: :get %><br>
 
 <div id="topmovies">
   <% @movies.each do |movie| %>
-      <%= link_to movie[:original_title], "/users/#{@user.id}/movies/#{movie[:id]}" %> Vote Average: <%= movie[:vote_average] %><br>
+      <%= link_to movie[:original_title], movie_show_path(movie) %> Vote Average: <%= movie[:vote_average] %><br>
   <% end %>
 </div>

@@ -4,5 +4,5 @@
 
 <h3>Existing Users:</h3>
 <% @users.each do |user| %>
-  <%= link_to "#{user.email}'s Dashboard", "users/#{user.id}" %><br>
+  <%= link_to "#{user.email}'s Dashboard", user_show_path(user) %><br>
 <% end %>
