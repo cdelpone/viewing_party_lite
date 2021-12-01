@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movie API', :vcr do
   it 'data from API' do
-    response = MovieService.get_data('movie/top_rated')
+    response = MoviesService.get_data('movie/top_rated')
 
     expect(response).to be_a(Hash)
     expect(response[:results]).to be_an(Array)
@@ -13,7 +13,7 @@ RSpec.describe 'Movie API', :vcr do
   end
 
   it 'gets top rated movies' do
-    response = MovieService.get_data('movie/top_rated')
+    response = MoviesService.get_data('movie/top_rated')
 
     response[:results].each do |movie|
       expect(movie).to have_key(:id)

@@ -8,4 +8,11 @@ class MoviesController < ApplicationController
       MoviesFacade.top_40
     end
   end
+
+  def show
+    # @user = User.find(params[:id])
+    @movie = MoviesFacade.movie_by_id(params[:id])
+    @movie_cast = MoviesFacade.movie_cast(params[:id])
+    @movie_reviews = MoviesFacade.movie_reviews(params[:id])
+  end
 end

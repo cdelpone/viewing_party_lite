@@ -22,7 +22,7 @@ RSpec.describe 'Top rated movies page' do
     visit "/users/#{@user.id}/movies"
 
     within("#topmovies") do
-      expect(page).to have_content(movie[:original_title])
+      expect(page).to have_link(movie[:original_title])
       expect(page).to have_content(movie[:vote_average])
     end
   end
