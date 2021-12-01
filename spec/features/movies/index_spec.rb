@@ -26,4 +26,15 @@ RSpec.describe 'Top rated movies page' do
       expect(page).to have_content(movie[:vote_average])
     end
   end
+
+  it 'finds movies by title', :vcr do
+    movie = MoviesFacade.movies_by_title("Shawshank Redemption")
+
+    visit "/users/#{@user.id}/movies"
+
+    within("#topmovies") do
+      expect(page).to have_link(movie.first[:original_title])
+      expect(page).to have_content(movie.first[:vote_average])
+    end
+  end
 end

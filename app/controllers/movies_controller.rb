@@ -10,9 +10,11 @@ class MoviesController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id])
     @movie = MoviesFacade.movie_by_id(params[:id])
     @movie_cast = MoviesFacade.movie_cast(params[:id])
     @movie_reviews = MoviesFacade.movie_reviews(params[:id])
+
+    @hours = @movie[:runtime]/60
+    @minutes = (@movie[:runtime].to_f%60).to_i
   end
 end
