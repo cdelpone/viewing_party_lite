@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   root to: 'main#index'
 
-  get '/register', to: 'user#new'
-  post '/register', to: 'user#create'
-  get '/user/:id', to: 'user#show'
-  # resources :user, only: :show
-  get '/user/:id/discover', to: 'discover#show'
+  get '/register', to: 'users#new'
+  post '/register', to: 'users#create'
+  get '/users/:id', to: 'users#show'
+
+  get '/users/:id/discover', to: 'discover#show'
+  get '/users/:id/movies', to: 'movies#index'
+  get '/users/:id/movies/:id', to: 'movies#show'
 end

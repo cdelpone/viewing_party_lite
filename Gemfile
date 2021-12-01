@@ -44,6 +44,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'launchy'
   gem 'rspec-rails'
+  gem 'figaro'
 end
 
 group :development do
@@ -54,6 +55,8 @@ group :development do
 end
 
 group :test do
+  gem 'vcr'
+  gem 'webmock'
 end
 
 
