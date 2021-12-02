@@ -1,21 +1,29 @@
 class MoviesFacade
   class << self
     def top_40
-      page_1 = MoviesService.get_data('movie/top_rated?page=1')
-      page_2 = MoviesService.get_data('movie/top_rated?page=2')
+      page1 = MoviesService.get_data('movie/top_rated?page=1')
+      page2 = MoviesService.get_data('movie/top_rated?page=2')
 
-      page_1[:results] + page_2[:results]
+      total_results = page1[:results] + page2[:results]
+      total_results.map do |result|
+        Movie.new(result)
+      end
     end
 
     def movies_by_title(title)
-      page_1 = MoviesService.get_data("search/movie?query=#{title}&page=1")
-      page_2 = MoviesService.get_data("search/movie?query=#{title}&page=2")
+      page1 = MoviesService.get_data("search/movie?query=#{title}&page=1")
+      page2 = MoviesService.get_data("search/movie?query=#{title}&page=2")
 
-      page_1[:results] + page_2[:results]
+      total_results = page1[:results] + page2[:results]
+      total_results.map do |result|
+        Movie.new(result)
+      end
     end
 
     def movie_by_id(id)
-      MoviesService.get_data("movie/#{id}")
+      data = MoviesService.get_data("movie/#{id}")
+
+      Movie.new(data)
     end
 
     def movie_cast(id)

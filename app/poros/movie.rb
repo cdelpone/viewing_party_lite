@@ -1,8 +1,8 @@
 class Movie
-  attr_reader :image_url, :title, :runtime, :id, :vote_average, :genre, :overview
+  attr_reader :poster_path, :title, :runtime, :id, :vote_average, :genre, :overview
 
   def initialize(data)
-    @image_url = data[:image_url]
+    @image_url = data[:poster_path]
     @title = data[:title]
     @runtime = data[:runtime]
     @id = data[:id]

@@ -1,12 +1,12 @@
 class MoviesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-
-    @movies = if params[:original_title]
-      MoviesFacade.movies_by_title(params[:original_title])
-    else
-      MoviesFacade.top_40
-    end
+    @movies = MoviesFacade.movies_by_title(params[:original_title])
+    # @movies = if params[:title]
+    #   MoviesFacade.movies_by_title(params[:title])
+    # else
+    #   MoviesFacade.top_40
+    # end
   end
 
   def show
