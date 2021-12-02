@@ -1,5 +1,5 @@
 class Party < ApplicationRecord
-  has_many :party_invitees, dependent: :destroy
+  has_many :party_invitees
   has_many :users, through: :party_invitees
 
   validates_presence_of :date

@@ -16,7 +16,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    
+    @parties = @user.parties
+    # require "pry"; binding.pry
     # @movie_images = MoviesFacade.movie_image(params[:id])
   end
 
@@ -25,4 +26,9 @@ class UsersController < ApplicationController
   def user_params
     params.permit(:name, :email)
   end
+
+  def party_params
+    params.permit(:id, :name, :date, :time, :movie_id, :movie_duration)
+  end
+
 end

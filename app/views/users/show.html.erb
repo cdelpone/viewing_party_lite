@@ -4,3 +4,8 @@
 
 <hr>
 <h3>Viewing Parties</h3>
+<% @parties.each do |party| %>
+  <%= party.name %>
+  <%= party.date %>
+  <%= party.time %>
+<% end %>
