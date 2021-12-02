@@ -1,7 +1,7 @@
-<%= button_to "Discover Page", discover_show_path(@user), method: :get %><br>
+<h1>Viewing Party Lite</h1>
 
-<div id="topmovies">
-  <% @movies.each do |movie| %>
-    <%= link_to movie.title, movie_show_path(@user, movie.id) %> Vote Average: <%= movie.vote_average %><br>
+<% if params[:title].present?  %>
+  <%= render partial: 'shared/search_movies' %>
+<% else %>
+<%= render partial: 'shared/toprated_movies' %>
   <% end %>
-</div>
