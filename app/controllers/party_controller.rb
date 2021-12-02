@@ -6,13 +6,14 @@ class PartyController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @movie = MoviesFacade.movie_by_id(params[:id])
-
-    @movie[:original_title] = params[:name]
-    @party = Party.create!(party_params)
-    # @party_invitee = PartyInvitee.create!(user: @user, party: @party)
-    redirect_to user_show_path(@user)
+    user = User.find(params[:user_id])
+    party = Party.create!(party_params)
+    if party.save
+      party_invitee = PartyInvitee.create!(user: user, party: party)
+      redirect_to user_show_path(user)
+    else
+      flash[:alert] = 'Invalid input. Please try again.'
+    end
   end
 
   private
@@ -22,8 +23,6 @@ class PartyController < ApplicationController
   end
 
   def movie_params
-    params.permit(:id, :original_title)
+    params.permit(:movie_id, :title)
   end
-
-
 end
