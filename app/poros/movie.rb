@@ -1,8 +1,8 @@
 class Movie
-  attr_reader :poster_path, :title, :runtime, :id, :vote_average, :genres, :overview
+  attr_reader :image_url, :title, :runtime, :id, :vote_average, :genres, :overview
 
   def initialize(data)
-    @image_url = data[:poster_path]
+    @image_url = image_gen(data[:poster_path])
     @title = data[:title]
     @runtime = data[:runtime]
     @id = data[:id]
@@ -15,5 +15,9 @@ class Movie
     genres.map do |genre|
       genre[:name]
     end
+  end
+
+  def image_gen(url)
+    "https://image.tmdb.org/t/p/w500#{url}?api_key=#{ENV['movie_api_key']}"
   end
 end

@@ -5,6 +5,11 @@
 <hr>
 <h3>Viewing Parties</h3>
 <% @parties.each do |party| %>
+  <% @movies.each do |movie| %>
+    <% if party.movie_id == movie.id  %>
+      <img src=<%= movie.image_url %>>
+    <% end %>
+  <% end %>
   <%= party.name %>
   <%= party.date %>
   <%= party.time %>

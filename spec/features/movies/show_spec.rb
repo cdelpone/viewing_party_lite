@@ -9,7 +9,7 @@ RSpec.describe 'Movie show page' do
     @hours = @movie.runtime/60
     @minutes = (@movie.runtime.to_f%60).to_i
 
-    visit movie_show_path(@user, @movie)
+    visit movie_show_path(@user, @movie.id)
   end
 
   it 'has button to return to discover page', :vcr do

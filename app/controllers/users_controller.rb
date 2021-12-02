@@ -17,8 +17,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @parties = @user.parties
-    # require "pry"; binding.pry
-    # @movie_images = MoviesFacade.movie_image(params[:id])
+    @movies = @user.parties.map do |party|
+      MoviesFacade.movie_by_id(party.movie_id)
+    end
+  end
+
+  def stuff
   end
 
   private
