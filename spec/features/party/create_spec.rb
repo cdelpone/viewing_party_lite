@@ -11,8 +11,8 @@ RSpec.describe "viewing party create" do
       visit movie_show_path(@user, @movie)
 
       expect(page).to have_button("Create Viewing Party for #{@movie[:original_title]}")
-      click_button "Create Viewing Party for #{@movie[:original_title]}"
-      expect(current_path).to eq("/users/#{@user.id}/movies/#{@movie[:id]}/viewing_party/new")
+      click_button "Create Viewing Party for #{@movie.title}"
+      expect(current_path).to eq("/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new")
     end
   end
 
@@ -23,10 +23,10 @@ RSpec.describe "viewing party create" do
     end
 
     it 'creates a new viewing party' do
-      visit "/users/#{@user.id}/movies/#{@movie[:id]}/viewing_party/new"
+      visit "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new"
 
       expect(page).to have_button("Discover Page")
-      expect(page).to have_content("#{@movie[:original_title]}")
+      expect(page).to have_content("#{@movie.title}")
     end
   end
 end

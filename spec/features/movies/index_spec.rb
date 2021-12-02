@@ -19,8 +19,8 @@ RSpec.describe 'Top rated movies page' do
     movie = MoviesFacade.top_40.first
 
     within("#topmovies") do
-      expect(page).to have_link(movie[:original_title])
-      expect(page).to have_content(movie[:vote_average])
+      expect(page).to have_link(movie.title)
+      expect(page).to have_content(movie.vote_average)
     end
   end
 
@@ -28,8 +28,8 @@ RSpec.describe 'Top rated movies page' do
     movie = MoviesFacade.movies_by_title("Shawshank Redemption")
 
     within("#topmovies") do
-      expect(page).to have_link(movie.first[:original_title])
-      expect(page).to have_content(movie.first[:vote_average])
+      expect(page).to have_link(movie.first.title)
+      expect(page).to have_content(movie.first.vote_average)
     end
   end
 end
