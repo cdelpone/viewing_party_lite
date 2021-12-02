@@ -19,10 +19,9 @@ class MoviesFacade
         Movie.new(result)
       end
     end
-    
+
     def movie_by_id(id)
       data = MoviesService.get_data("movie/#{id}")
-
       Movie.new(data)
     end
 
