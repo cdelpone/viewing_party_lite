@@ -18,3 +18,10 @@ class MoviesController < ApplicationController
     @minutes = (@movie.runtime.to_f%60).to_i
   end
 end
+# @movies = if params[:title]
+#             MoviesFacade.movies_by_title(params[:title])
+#           elsif
+#             MoviesFacade.top_40
+#           else
+#             flash[:alert] = "Please enter a search keyword"
+#           end
