@@ -6,7 +6,7 @@ RSpec.describe Movie do
       title: "The Green Mile",
       runtime: 104,
       vote_average: 8.5,
-      genre: "Drama",
+      genres: "Drama",
       overview: "Movie about a guy"
     }
   end
@@ -21,7 +21,7 @@ RSpec.describe Movie do
     expect(movie.title).to eq("The Green Mile")
     expect(movie.runtime).to eq(104)
     expect(movie.vote_average).to eq(8.5)
-    expect(movie.genre).to eq("Drama")
+    expect(movie.genres).to eq("Drama")
     expect(movie.overview).to eq("Movie about a guy")
   end
 end
