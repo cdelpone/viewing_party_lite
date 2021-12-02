@@ -8,8 +8,10 @@ RSpec.describe "viewing party create" do
     end
 
     it 'renders the new form', :vcr do
-      visit movie_show_path(@user, @movie.id)
-      expect(page).to have_button("Create Viewing Party for #{@movie.title}")
+      visit movie_show_path(@user, @movie)
+
+      expect(page).to have_button("Create Viewing Party for #{@movie[:original_title]}")
+
       click_button "Create Viewing Party for #{@movie.title}"
       expect(current_path).to eq("/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new")
     end
