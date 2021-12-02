@@ -18,6 +18,6 @@ class Movie
   end
 
   def image_gen(url)
-    "https://image.tmdb.org/t/p/w500#{url}?api_key=#{ENV['movie_api_key']}"
+    "https://image.tmdb.org/t/p/w200#{url}?api_key=#{ENV['movie_api_key']}"
   end
 end
