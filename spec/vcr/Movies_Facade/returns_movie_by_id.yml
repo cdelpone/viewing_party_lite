@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 01 Dec 2021 00:16:14 GMT
+      - Thu, 02 Dec 2021 15:49:11 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,21 +42,23 @@ http_interactions:
       X-Memc-Key:
       - 61ab33e7da6ffffeef140e858380738d178d3504
       X-Memc-Age:
-      - '2764'
+      - '494'
       X-Memc-Expires:
-      - '13810'
+      - '15944'
       Etag:
-      - W/"56f1b15b09f457c8fc9ff048f60f0f68"
+      - W/"a64c8a258b05d8aec1a864f3f2495312"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 48ea53c7edffa2cdbdc32f7d94966344.cloudfront.net (CloudFront)
+      - 1.1 b2e880ac67c1fba390623b9fc04bd63a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - lJUICjXOhru3_LEV366SB9ZNfuzNT3UGmPww5JwV9z23VvcIp52EpA==
+      - H2KLq-l7hURE2QifxVpOOQ21diDz2zarhTZSGyGnQ21MBjJ2OIiFSA==
+      Age:
+      - '25677'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/iNh3BivHyg5sQRPP1KOkzguEX0H.jpg","belongs_to_collection":null,"budget":25000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":278,"imdb_id":"tt0111161","original_language":"en","original_title":"The
@@ -65,9 +67,9 @@ http_interactions:
         at the Shawshank prison, where he puts his accounting skills to work for an
         amoral warden. During his long stretch in prison, Dufresne comes to be admired
         by the other inmates -- including an older prisoner named Red -- for his integrity
-        and unquenchable sense of hope.","popularity":52.637,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","production_companies":[{"id":97,"logo_path":"/7znWcbDd4PcJzJUlJxYqAlPPykp.png","name":"Castle
+        and unquenchable sense of hope.","popularity":52.392,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","production_companies":[{"id":97,"logo_path":"/7znWcbDd4PcJzJUlJxYqAlPPykp.png","name":"Castle
         Rock Entertainment","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1994-09-23","revenue":28341469,"runtime":142,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Fear
-        can hold you prisoner. Hope can set you free.","title":"The Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":20203}'
-  recorded_at: Wed, 01 Dec 2021 00:16:14 GMT
+        can hold you prisoner. Hope can set you free.","title":"The Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":20210}'
+  recorded_at: Thu, 02 Dec 2021 22:57:08 GMT
 recorded_with: VCR 6.0.0

@@ -15,7 +15,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
+    @parties = @user.parties
+    @movies = @user.parties.map do |party|
+      MoviesFacade.movie_by_id(party.movie_id)
+    end
+  end
+
+  def stuff
   end
 
   private
@@ -23,4 +30,9 @@ class UsersController < ApplicationController
   def user_params
     params.permit(:name, :email)
   end
+
+  def party_params
+    params.permit(:id, :name, :date, :time, :movie_id, :movie_duration)
+  end
+
 end
