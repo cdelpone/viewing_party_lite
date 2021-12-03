@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def new
     @user = User.new
@@ -9,7 +11,7 @@ class UsersController < ApplicationController
       redirect_to "/users/#{user.id}"
     else
       redirect_to register_path
-      flash[:alert] = "Please enter valid data"
+      flash[:alert] = 'Please enter valid data'
     end
   end
 
@@ -30,5 +32,4 @@ class UsersController < ApplicationController
   def party_params
     params.permit(:id, :name, :date, :time, :movie_id, :movie_duration)
   end
-
 end

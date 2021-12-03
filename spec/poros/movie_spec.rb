@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Movie do
   let(:data) do
     { id: 1,
-      title: "The Green Mile",
+      title: 'The Green Mile',
       runtime: 104,
       vote_average: 8.5,
-      genres: "Drama",
-      overview: "Movie about a guy"
-    }
+      genres: 'Drama',
+      overview: 'Movie about a guy'}
   end
 
   let(:movie) { Movie.new(data) }
@@ -18,10 +19,10 @@ RSpec.describe Movie do
   end
 
   it 'has attributes' do
-    expect(movie.title).to eq("The Green Mile")
+    expect(movie.title).to eq('The Green Mile')
     expect(movie.runtime).to eq(104)
     expect(movie.vote_average).to eq(8.5)
-    expect(movie.genres).to eq("Drama")
-    expect(movie.overview).to eq("Movie about a guy")
+    expect(movie.genres).to eq('Drama')
+    expect(movie.overview).to eq('Movie about a guy')
   end
 end

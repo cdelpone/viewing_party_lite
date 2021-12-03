@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Party < ApplicationRecord
   has_many :party_invitees
   has_many :users, through: :party_invitees

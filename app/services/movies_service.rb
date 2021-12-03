@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MoviesService
   class << self
     def conn
@@ -9,7 +11,7 @@ class MoviesService
     def get_data(url)
       response = conn.get(url)
 
-      data = JSON.parse(response.body, symbolize_names: true)
+      JSON.parse(response.body, symbolize_names: true)
     end
   end
 end

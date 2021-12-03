@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe "viewing party create" do
@@ -21,7 +23,7 @@ RSpec.describe "viewing party create" do
     it 'has a form to create a new viewing party' do
       visit new_viewing_party_path(@user.id, @movie.id)
 
-      expect(page).to have_button("Discover Page")
+      expect(page).to have_button('Discover Page')
       expect(page).to have_content("#{@movie.title}")
       expect(page).to have_content("Duration of party:")
       expect(page).to have_field(:movie_duration, with: 142)

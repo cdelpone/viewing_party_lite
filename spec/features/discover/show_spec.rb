@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Discover page' do
@@ -9,12 +11,12 @@ RSpec.describe 'Discover page' do
 
   it 'shows discover page' do
     expect(page).to have_content('Discover Movies')
-    expect(page).to have_button("Find Top Rated Movies")
-    expect(page).to have_button("Find Movies")
+    expect(page).to have_button('Find Top Rated Movies')
+    expect(page).to have_button('Find Movies')
   end
 
   it 'can go to top rated movies page', :vcr do
-    click_button "Find Top Rated Movies"
+    click_button 'Find Top Rated Movies'
     expect(current_path).to eq(movie_index_path(@user))
   end
 end
