@@ -31,8 +31,10 @@ RSpec.describe "user show" do
       overview: "Movie about a guy"
     })
 
-    party = Party.create!(name: movie.title, movie_id: movie.id, date: "2021-12-25", time:"13:21:00", movie_duration: '104')
+    party = Party.create!(name: movie.title, movie_id: movie.id, date: "2021-12-25", time:"13:21:00", movie_duration: '104', user_id: @user.id)
     party_invitee = PartyInvitee.create!(user_id: @user.id, party_id: party.id)
+
+    visit(current_path)
 
     expect(page).to have_content(party.name)
   end
