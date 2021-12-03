@@ -13,6 +13,7 @@ class PartyController < ApplicationController
       redirect_to user_show_path(user)
     else
       flash[:alert] = 'Invalid input. Please try again.'
+      redirect_to new_viewing_party_path(user.id, movie.id)
     end
   end
 
