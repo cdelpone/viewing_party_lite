@@ -4,7 +4,7 @@
 
 <hr>
 <h3>Viewing Parties</h3>
-<% @parties.each do |party| %>
+<% @user.parties.each do |party| %>
   <% @movies.each do |movie| %>
     <% if party.movie_id == movie.id  %>
       <img src=<%= movie.image_url %>>
@@ -13,5 +13,5 @@
   <h4><%= party.name %></h4>
   Party Date: <%= party.date %><br>
   Party Time: <%= party.time %><br>
-  Status: <hr>
+  Status: <%= @user.status %><hr>
 <% end %>
