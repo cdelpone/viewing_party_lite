@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe "viewing party create" do
@@ -26,7 +28,7 @@ RSpec.describe "viewing party create" do
     it 'creates a new viewing party' do
       visit "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new"
 
-      expect(page).to have_button("Discover Page")
+      expect(page).to have_button('Discover Page')
       expect(page).to have_content("#{@movie.title}")
     end
   end

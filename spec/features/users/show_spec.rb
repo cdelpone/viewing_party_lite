@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe "user show" do
@@ -13,9 +15,9 @@ RSpec.describe "user show" do
   end
 
   it 'has a button to discover movies' do
-    expect(page).to have_button("Discover Movies")
+    expect(page).to have_button('Discover Movies')
 
-    click_button "Discover Movies"
+    click_button 'Discover Movies'
 
     expect(current_path).to eq(discover_show_path(@user))
   end

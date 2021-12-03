@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PartyController < ApplicationController
   def new
     @user = User.find(params[:user_id])
@@ -6,7 +8,7 @@ class PartyController < ApplicationController
 
   def create
     user = User.find(params[:user_id])
-    movie = MoviesFacade.movie_by_id(params[:id])
+    # movie = MoviesFacade.movie_by_id(params[:id])
     party = Party.new(party_params)
     if party.save
       PartyInvitee.create!(user_id: user.id, party_id: party.id)

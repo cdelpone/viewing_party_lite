@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe 'Movie API', :vcr do
+RSpec.describe MoviesService, :vcr do
   it 'data from API' do
     response = MoviesService.get_data('movie/top_rated')
 
