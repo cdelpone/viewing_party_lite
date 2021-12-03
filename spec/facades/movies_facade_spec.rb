@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Movies Facade', :vcr do
@@ -8,9 +10,9 @@ RSpec.describe 'Movies Facade', :vcr do
   end
 
   it 'returns searched movies' do
-    response = MoviesFacade.movies_by_title("Shawshank")
+    response = MoviesFacade.movies_by_title('Shawshank')
 
-    expect(response.first.title).to include("Shawshank Redemption")
+    expect(response.first.title).to include('Shawshank Redemption')
     expect(response.first).to be_a(Movie)
   end
 
@@ -24,7 +26,7 @@ RSpec.describe 'Movies Facade', :vcr do
   it 'returns movie cast' do
     response = MoviesFacade.movie_cast(278)
 
-    expect(response.first[:name]).to eq("Tim Robbins")
+    expect(response.first[:name]).to eq('Tim Robbins')
     expect(response.count).to eq(10)
     expect(response).to be_an(Array)
   end
@@ -33,7 +35,7 @@ RSpec.describe 'Movies Facade', :vcr do
     response = MoviesFacade.movie_reviews(278)
 
     expect(response[:total_results]).to eq(7)
-    expect(response[:results].first[:author]).to eq("elshaarawy")
+    expect(response[:results].first[:author]).to eq('elshaarawy')
     expect(response).to be_a(Hash)
   end
 end

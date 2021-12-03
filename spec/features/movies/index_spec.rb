@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Top rated movies page' do
@@ -8,9 +10,9 @@ RSpec.describe 'Top rated movies page' do
   end
 
   it 'has button to return to discover page', :vcr do
-    expect(page).to have_button("Discover Page")
+    expect(page).to have_button('Discover Page')
 
-    click_button "Discover Page"
+    click_button 'Discover Page'
 
     expect(current_path).to eq(discover_show_path(@user))
   end
@@ -25,7 +27,7 @@ RSpec.describe 'Top rated movies page' do
   end
 
   it 'finds movies by title', :vcr do
-    movie = MoviesFacade.movies_by_title("Shawshank Redemption")
+    movie = MoviesFacade.movies_by_title('Shawshank Redemption')
 
     within("#topmovies") do
       expect(page).to have_link(movie.first.title)

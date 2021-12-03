@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MoviesFacade
   class << self
     def top_40
@@ -31,7 +33,7 @@ class MoviesFacade
     end
 
     def movie_reviews(id)
-      movie = MoviesService.get_data("movie/#{id}/reviews")
+      MoviesService.get_data("movie/#{id}/reviews")
     end
   end
 end

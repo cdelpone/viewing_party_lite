@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Movie
   attr_reader :image_url, :title, :runtime, :id, :vote_average, :genres, :overview
 
@@ -19,5 +21,11 @@ class Movie
 
   def image_gen(url)
     "https://image.tmdb.org/t/p/w200#{url}?api_key=#{ENV['movie_api_key']}"
+  end
+
+  def formatted_runtime
+    hours = @runtime / 60
+    rest = @runtime % 60
+    "#{hours} hour(s) #{rest} minute(s)"
   end
 end
