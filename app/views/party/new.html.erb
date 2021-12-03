@@ -15,9 +15,6 @@
   <%= form.label "Start Time:" %>
   <%= form.time_field :time %><br>
   <%= form.label "Invite Other Users:" %>
-  <% @users.each do |user| %>
-    <%= form.check_box user.id %>
-    <%= form.label user.name %>
-  <% end %><br>
+  <%= form.collection_check_boxes(:user_ids, User.all_except(@user), :id, :name) %><br>
   <%= form.submit "Create Party" %>
 <% end %>
