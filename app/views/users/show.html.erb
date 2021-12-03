@@ -11,7 +11,7 @@
     <% end %>
   <% end %><br>
   <h4><%= party.name %></h4>
-  Party Date: <%= party.date %><br>
-  Party Time: <%= party.time %><br>
+  Party Date: <%= party.date.strftime('%B %-d, %Y') %><br>
+  Party Time: <%= party.time.strftime('%I:%M %P') %><br>
   Status: <%= @user.status %><hr>
 <% end %>
