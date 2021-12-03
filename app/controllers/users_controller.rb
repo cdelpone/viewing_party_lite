@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-
     if user.save
       redirect_to "/users/#{user.id}"
     else
@@ -20,9 +19,6 @@ class UsersController < ApplicationController
     @movies = @user.parties.map do |party|
       MoviesFacade.movie_by_id(party.movie_id)
     end
-  end
-
-  def stuff
   end
 
   private

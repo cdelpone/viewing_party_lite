@@ -53,7 +53,7 @@ RSpec.describe "viewing party create" do
       fill_in(:time, with: "04:30:00 UST")
       click_button("Create Party")
 
-      # expect(page).to have_content("Invalid input. Please try again.")
+      expect(page).to have_content("Invalid input. Please try again.")
       expect(current_path).to eq(new_viewing_party_path(@user.id, @movie.id))
     end
   end
