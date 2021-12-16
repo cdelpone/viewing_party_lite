@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 require 'rails_helper'
 
@@ -18,9 +18,14 @@ RSpec.describe MoviesService, :vcr do
     response = MoviesService.get_data('movie/top_rated')
 
     response[:results].each do |movie|
+      expect(movie).to have_key(:backdrop_path)
+      expect(movie).to have_key(:genre_ids)
       expect(movie).to have_key(:id)
-      expect(movie).to have_key(:vote_average)
       expect(movie).to have_key(:original_title)
+      expect(movie).to have_key(:overview)
+      expect(movie).to have_key(:poster_path)
+      expect(movie).to have_key(:title)
+      expect(movie).to have_key(:vote_average)
     end
   end
 end

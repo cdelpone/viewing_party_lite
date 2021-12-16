@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 class Movie
   attr_reader :image_url, :title, :runtime, :id, :vote_average, :genres, :overview

@@ -1,17 +1,17 @@
-# frozen_string_literal: true
-
 class UsersController < ApplicationController
   def new
     @user = User.new
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
+    user = user_params
+    user[:email] = user[:email].downcase
+    new_user     = User.new(user_params)
+    if new_user.save
       redirect_to "/users/#{user.id}"
     else
-      redirect_to register_path
       flash[:alert] = 'Please enter valid data'
+      redirect_to register_path
     end
   end
 
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name, :email)
+    params.permit(:name, :email, :password, :password_confirmation)
   end
 
   def party_params

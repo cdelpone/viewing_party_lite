@@ -1,17 +1,21 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-RSpec.describe "user create" do
-  describe 'the user new' do
+RSpec.describe "New User" do
+  describe 'New user' do
     it 'renders the new form' do
       visit root_path
 
       expect(page).to have_button('Create New User')
-      
+
       click_button 'Create New User'
 
       expect(current_path).to eq(register_path)
+    end
+
+    it 'doesnt store passwords' do
+      user = User.create(name: 'Meg', email: 'meg@test.com', password: 'password123', password_confirmation: 'password123')
+      expect(user).to_not have_attribute(:password)
+      expect(user.password_digest).to_not eq('password123')
     end
 
     it 'creates a new user' do
@@ -33,6 +37,5 @@ RSpec.describe "user create" do
       expect(page).to have_content("Please enter valid data")
       expect(current_path).to eq(register_path)
     end
-
   end
 end
