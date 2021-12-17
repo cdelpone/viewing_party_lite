@@ -1,10 +1,12 @@
-
-
 require 'rails_helper'
 
 RSpec.describe 'Top rated movies page' do
   before(:each) do
-    @user = User.create!(name: 'Tammy Tanaka', email: 'tammy@fake_email.com')
+    @user = User.create!(name: 'Pesto Besto', email: 'pesto@fakeemail.com', password: 'password123', password_confirmation: 'password123')
+    visit login_path
+    fill_in :email, with: @user.email
+    fill_in :password, with: "password123"
+    click_on "Log In"
 
     visit movie_index_path(@user)
   end

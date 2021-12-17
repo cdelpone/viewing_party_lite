@@ -1,17 +1,20 @@
-
-
 require 'rails_helper'
 
 RSpec.describe 'Movie show page' do
-  before(:each) do
-    @user = User.create!(name: 'Tammy Tanaka', email: 'tammy@fake_email.com')
+  before :each do
+    @user = User.create!(name: 'Pesto Besto', email: 'pesto@fakeemail.com', password: 'password123', password_confirmation: 'password123')
+    visit login_path
+    fill_in :email, with: @user.email
+    fill_in :password, with: "password123"
+    click_on "Log In"
+
     @movie = MoviesFacade.movie_by_id(278)
     @movie_cast = MoviesFacade.movie_cast(278)
     @movie_reviews = MoviesFacade.movie_reviews(278)
     @hours = @movie.runtime/60
     @minutes = (@movie.runtime.to_f%60).to_i
 
-    visit movie_show_path(@user, @movie.id)
+    visit movie_show_path(@movie.id)
   end
 
   it 'has button to return to discover page', :vcr do
@@ -27,7 +30,7 @@ RSpec.describe 'Movie show page' do
 
     click_button "Create Viewing Party for #{@movie.title}"
 
-    expect(current_path).to eq(new_viewing_party_path(@user, @movie.id))
+    expect(current_path).to eq(new_viewing_party_path(@movie.id))
   end
 
   it 'has movie details from API', :vcr do

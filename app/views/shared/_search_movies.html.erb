@@ -4,6 +4,6 @@
 
 <div id="searchedmovies">
   <% @movies.each do |movie| %>
-    <%= link_to movie.title, movie_show_path(@user, movie.id) %> Vote Average: <%= movie.vote_average %><br>
+    <%= link_to movie.title, movie_show_path(movie.id) %> Vote Average: <%= movie.vote_average %><br>
   <% end %>
 </div>

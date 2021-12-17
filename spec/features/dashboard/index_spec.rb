@@ -1,39 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe 'Dashboard' do
-  it 'has project title' do
-    visit '/'
+  before :each do
+    @user = User.create!(name: 'Pesto Besto', email: 'pesto@fakeemail.com', password: 'password123', password_confirmation: 'password123')
+    visit login_path
+    fill_in :email, with: @user.email
+    fill_in :password, with: "password123"
+    click_on "Log In"
 
-    expect(page).to have_content('Viewing Party Lite')
-    expect(page).to have_link('Home')
-    expect(page).to have_content('Existing Users:')
-    expect(page).to have_button("Create New User")
+    visit '/dashboard'
   end
 
-  context "User registration form" do
-    # visit register_path
-    # As a visitor
-    # When I visit `/register`
-    # I see a form to fill in my name, email, password, and password confirmation.
-    # When I fill in that form with my name, email, and matching passwords,
-    # I'm taken to my dashboard page `/users/:id`
+  it 'validates registered user' do
+  end
 
-    it "creates new user" do
-      visit root_path
-
-      click_on "Register as a User"
-
-      expect(current_path).to eq(new_users_path)
-
-      username = "funbucket13"
-      password = "test"
-
-      fill_in :username, with: username
-      fill_in :password, with: password
-
-      click_on "Create User"
-
-      expect(page).to have_content("Welcome, #{username}!")
-    end
+  it 'has user info' do
+    expect(page).to have_link('Home')
+    expect(page).to have_content("Pesto Besto's Dashboard")
   end
 end

@@ -1,17 +1,20 @@
-
-
 require 'rails_helper'
-
-RSpec.describe "user show" do
+# ber spec/features/users/show_spec.rb
+RSpec.describe "User Show/Dashboard" do
   before :each do
-    @user = User.create!(name: 'Tammy Tanaka', email: 'tammy@fake_email.com')
-    @user2 = User.create!(name: 'Bob Smith', email: 'bob@fake_email.com')
-    visit user_show_path(@user)
+    @user2 = User.create!(name: 'Burton', email: 'burton@fakeemail.com', password: 'password123', password_confirmation: 'password123')
+    @user = User.create!(name: 'Pesto Besto', email: 'pesto@fakeemail.com', password: 'password123', password_confirmation: 'password123')
+    visit login_path
+    fill_in :email, with: @user.email
+    fill_in :password, with: "password123"
+    click_on "Log In"
+
+    visit dashboard_path
   end
 
   it 'shows user details' do
-    expect(page).to have_content("Tammy Tanaka's Dashboard")
-    expect(page).to_not have_content("Bob Smith's Dashboard")
+    expect(page).to have_content("Pesto Besto's Dashboard")
+    expect(page).to_not have_content("Burton's Dashboard")
   end
 
   it 'has a button to discover movies' do

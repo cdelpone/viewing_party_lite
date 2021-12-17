@@ -6,17 +6,21 @@ class UsersController < ApplicationController
   def create
     user = user_params
     user[:email] = user[:email].downcase
-    new_user     = User.new(user_params)
+    new_user = User.create(user_params)
     if new_user.save
-      redirect_to "/users/#{user.id}"
-    else
-      flash[:alert] = 'Please enter valid data'
+      session[:user_id] = new_user.id
+      redirect_to dashboard_path
+    elsif params[:password] != params[:password_confirmation]
       redirect_to register_path
+      flash[:alert] = "Password and password confirmation must match"
+    else
+      redirect_to register_path
+      flash[:alert] = "All fields must be complete and valid"
     end
   end
 
   def show
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
     @parties = @user.parties
     @movies = @user.parties.map do |party|
       MoviesFacade.movie_by_id(party.movie_id)

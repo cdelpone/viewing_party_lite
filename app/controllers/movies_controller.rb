@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
     @movies = if params[:title]
       MoviesFacade.movies_by_title(params[:title])
     else
@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
     @movie = MoviesFacade.movie_by_id(params[:id])
     @movie_cast = MoviesFacade.movie_cast(params[:id])
     @movie_reviews = MoviesFacade.movie_reviews(params[:id])

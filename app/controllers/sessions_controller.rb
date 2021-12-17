@@ -4,9 +4,9 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
-    if user && user.authenticate([params[:password])
+    if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to user_show_path(user)
+      redirect_to dashboard_path
     else
       redirect_to login_path
       flash[:alert] = "bad credentials, try again."
